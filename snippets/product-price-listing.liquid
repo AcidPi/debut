@@ -15,6 +15,10 @@
     assign price = product.price
     assign available = product.available
     assign variant = product.variants.first
+
+    assign price_max = product.price_max
+    assign money_price_max = price_max | money
+
   else
     assign compare_at_price = 1999
     assign price = 1999
@@ -26,6 +30,11 @@
   else
     assign money_price = price | money
   endif
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.from_lowest_price_html' | t: price: money_price_max
+  endif
+
 -%}
 
 <dl class="price price--listing
