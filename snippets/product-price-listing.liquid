@@ -13,12 +13,9 @@
   if product.title
     assign compare_at_price = product.compare_at_price
     assign price = product.price
+    assign price_max = product.price_max
     assign available = product.available
     assign variant = product.variants.first
-
-    assign price_max = product.price_max
-    assign money_price_max = price_max | money
-
   else
     assign compare_at_price = 1999
     assign price = 1999
@@ -27,8 +24,10 @@
 
   if settings.currency_code_enabled
     assign money_price = price | money_with_currency
+    assign money_price_max = price_max | money_with_currency
   else
     assign money_price = price | money
+    assign money_price_max = price_max | money
   endif
 
   if product.price_varies
