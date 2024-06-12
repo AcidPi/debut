@@ -6992,3 +6992,5 @@ hr {
   src: url("{{ 'CreativeVintage.ttf' | asset_url }}") format("truetype"),
        url("{{ 'CreativeVintage.woff2' | asset_url }}") format("woff2");
 }
+
+.h1 {font-family:"CreativeVintage";}
