@@ -6978,3 +6978,17 @@ hr {
 
 .store-availability-list__phone {
   margin-bottom: 0; }
+
+@font-face {
+  font-family: "CreativeVintage"
+  src: url ({{"CreativeVintage" | file_url }}) format("truetype")
+}
+@font-face {
+  font-family: "CreativeVintage"
+  src: url ({{"CreativeVintage" | file_url }}) format("woff2")
+}
+@font-face {
+  font-family: "CreativeVintage";
+  src: url("{{ 'CreativeVintage.ttf' | asset_url }}") format("truetype"),
+       url("{{ 'CreativeVintage.woff2' | asset_url }}") format("woff2");
+}
