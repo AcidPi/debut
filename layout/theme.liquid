@@ -86,8 +86,6 @@
     {{ base_font_bold_italic | font_face: font_display: 'swap' }}
   </style>
 
-   {%- render 'custom-font' -%}
-  
   <script>
     {%- if settings.currency_code_enabled -%}
       const moneyFormat = {{ shop.money_with_currency_format | json }}
